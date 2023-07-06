@@ -1,0 +1,209 @@
+/* font-family: 'Bebas Neue', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  display: flex;
+}
+
+/* LEFT SIDE */
+.left-side {
+  width: 35vw;
+  min-width: 400px;
+  position: relative;
+}
+
+.background-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.logo-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.logo-container .logo {
+  width: 300px;
+  margin: 50px 0;
+}
+
+.background-author {
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+}
+
+.background-author .author,
+.background-author a {
+  color: #fff;
+}
+
+/* RIGHT SIDE */
+.header,
+.right-side section h2,
+.right-side fieldset,
+.right-side form button,
+.right-side .btn-text {
+  margin-left: 50px;
+}
+
+.right-side {
+  background-color: #f9fafb;
+  width: 65vw;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  gap: 40px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+.form-title {
+  color: rgb(58, 58, 58);
+  letter-spacing: 0.8px;
+  margin-top: 20px;
+}
+
+.icon {
+  width: 32px;
+}
+
+form section {
+  background-color: #ffffff;
+  border-top: 1px solid rgba(185, 185, 185, 0.15);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+fieldset {
+  max-width: 37vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 80px;
+  grid-row-gap: 30px;
+  margin-top: 20px;
+  border: none;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  min-width: 250px;
+}
+form p input {
+  height: 30px;
+  border: 1px solid rgba(185, 185, 185, 0.6);
+  border-radius: 5px;
+  padding: 4px;
+}
+
+form p input:focus {
+  border: 1px solid rgba(46, 98, 158, 0.9);
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.label-text {
+  color: rgb(88, 88, 88);
+}
+
+form button {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 15px;
+  border: none;
+  background-color: rgba(46, 98, 158, 1);
+  color: #fff;
+  padding: 10px;
+  width: 200px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.btn-text {
+  font-weight: 500;
+}
+
+.btn-text span {
+  color: rgba(46, 98, 158, 1);
+  font-weight: 700;
+  cursor: pointer;
+}
+/* SPLASH */
+
+.letter {
+  font-size: 32px;
+  color: #0000ff;
+  font-style: italic;
+  /* margin-right: 5px; */
+}
+
+.letter:nth-child(1) {
+  color: #0044ff; /* Lighter shade of blue for the first letter */
+}
+
+.letter:nth-child(2) {
+  color: #0077ff; /* Medium shade of blue for the second letter */
+}
+
+.letter:nth-child(3) {
+  color: #00aaff; /* Darker shade of blue for the third letter */
+}
+
+.letter:nth-child(4) {
+  color: #00ddff; /* Another shade of blue for the fourth letter */
+}
+
+.letter:nth-child(5) {
+  color: #00f0f0; /* Yet another shade of blue for the fifth letter */
+}
+
+.letter:nth-child(6) {
+  color: #00ccff; /* Another shade of blue for the sixth letter */
+}
