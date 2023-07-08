@@ -21,34 +21,23 @@
     <main>
       <!-- HERO SECTION -->
       <section class="hero-section">
-        <div class="hero-image-container">
+        <div class="hero-container">
+          <div class="hero-logo-container">
+            <img src="images/logo.svg" alt="logo splash" class="hero-logo" />
+            <a href="#formSection" class="hero-logo-text italic"
+              >Click to join us</a
+            >
+          </div>
           <img
             src="images/background.jpg"
             alt="background image"
             class="hero-image"
           />
         </div>
-        <div class="hero-logo-container">
-          <img src="images/logo.svg" alt="logo splash" class="hero-logo" />
-        </div>
-        <div class="hero-author-container">
-          <p class="hero-author">
-            Photo by
-            <a
-              href="https://unsplash.com/@sotti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-              >Shifaaz shamoon</a
-            >
-            on
-            <a
-              href="https://unsplash.com/images/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-              >Unsplash</a
-            >
-          </p>
-        </div>
       </section>
 
       <!-- FORM SECTION -->
-      <section class="form-section">
+      <section id="formSection" class="form-section">
         <div class="form-content">
           <div class="form-header">
             <h2>
@@ -75,7 +64,7 @@
                 <h2 class="form-title">Let's get started!</h2>
                 <fieldset class="form-fieldset">
                   <div class="input-row">
-                    <label for="firstNameInput">
+                    <label class="form-label" for="firstNameInput">
                       <span class="input-label">First Name</span>
                     </label>
                     <input
@@ -89,7 +78,7 @@
                     <span class="form-error-message" id="firstNameError"></span>
                   </div>
                   <div class="input-row">
-                    <label for="lastNameInput">
+                    <label class="form-label" for="lastNameInput">
                       <span class="input-label">Last Name</span>
                     </label>
                     <input
@@ -103,7 +92,7 @@
                     <span class="form-error-message" id="lastNameError"></span>
                   </div>
                   <div class="input-row">
-                    <label for="emailInput">
+                    <label class="form-label" for="emailInput">
                       <span class="input-label">Email</span>
                     </label>
                     <input
@@ -118,7 +107,7 @@
                     <span class="form-error-message" id="emailError"></span>
                   </div>
                   <div class="input-row">
-                    <label for="phoneInput">
+                    <label class="form-label" for="phoneInput">
                       <span class="input-label">Phone Number</span>
                     </label>
                     <input
@@ -130,7 +119,7 @@
                     />
                   </div>
                   <div class="input-row">
-                    <label for="passwordInput">
+                    <label class="form-label" for="passwordInput">
                       <span class="input-label">Password</span>
                     </label>
                     <input
@@ -196,7 +185,7 @@
                     </div>
                   </div>
                   <div class="input-row">
-                    <label for="confirmPasswordInput">
+                    <label class="form-label" for="confirmPasswordInput">
                       <span class="input-label">Confirm Password</span>
                     </label>
                     <input
