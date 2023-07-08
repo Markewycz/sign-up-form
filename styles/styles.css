@@ -222,7 +222,7 @@ main {
 
 .password-rules {
   position: absolute;
-  visibility: visible;
+  visibility: hidden;
   min-width: 25em;
   z-index: 2;
 
@@ -467,6 +467,7 @@ main {
     box-shadow: none;
     padding: 0;
     margin-top: 10px;
+    visibility: visible;
   }
 
   .password-rules-message {
