@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <script src="src/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,19 +19,20 @@
   </head>
   <body>
     <main>
-      <div class="left-side">
-        <div class="background-container">
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <div class="hero-image-container">
           <img
             src="images/background.jpg"
             alt="background image"
-            class="background-img"
+            class="hero-image"
           />
         </div>
-        <div class="logo-container">
-          <img src="images/logo.svg" alt="logo splash" class="logo" />
+        <div class="hero-logo-container">
+          <img src="images/logo.svg" alt="logo splash" class="hero-logo" />
         </div>
-        <div class="background-author">
-          <p class="author">
+        <div class="hero-author-container">
+          <p class="hero-author">
             Photo by
             <a
               href="https://unsplash.com/@sotti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
@@ -45,10 +45,12 @@
             >
           </p>
         </div>
-      </div>
-      <div class="right-side">
-        <div class="right-content">
-          <div class="header">
+      </section>
+
+      <!-- FORM SECTION -->
+      <section class="form-section">
+        <div class="form-content">
+          <div class="form-header">
             <h2>
               Dive into the World of Creativity<br />with
               <span class="letter">S</span>
@@ -57,92 +59,92 @@
               <span class="letter">a</span>
               <span class="letter">s</span>
               <span class="letter">h</span>
-              Photographic Company!🌊
+              🌊
             </h2>
             <h3>
               Please complete the form below to embark on an exciting journey of
-              capturing <span class="italic">moments</span> and unleashing your
-              creative <span class="italic"> potential</span>.
+              capturing <span class="italic header-accent">moments</span> and
+              unleashing your creative
+              <span class="italic header-accent"> potential</span>.
             </h3>
           </div>
 
-          <div class="sign-up-container">
-            <form id="signUpForm" novalidate>
-              <section>
+          <div class="form-container">
+            <form id="signUpForm" class="signup-form" novalidate>
+              <section class="main-form-section">
                 <h2 class="form-title">Let's get started!</h2>
-                <fieldset>
-                  <div class="form-row">
+                <fieldset class="form-fieldset">
+                  <div class="input-row">
                     <label for="firstNameInput">
-                      <span class="label-text">First Name</span>
+                      <span class="input-label">First Name</span>
                     </label>
                     <input
                       id="firstNameInput"
-                      class="input-field"
+                      class="form-input"
                       name="first_name"
                       type="text"
                       pattern="[A-Za-z]+"
                       required
                     />
-                    <span class="error-message" id="firstNameError"></span>
+                    <span class="form-error-message" id="firstNameError"></span>
                   </div>
-                  <div class="form-row">
+                  <div class="input-row">
                     <label for="lastNameInput">
-                      <span class="label-text">Last Name</span>
+                      <span class="input-label">Last Name</span>
                     </label>
                     <input
                       id="lastNameInput"
-                      class="input-field"
+                      class="form-input"
                       name="last_name"
                       type="text"
                       pattern="[A-Za-z]+"
                       required
                     />
-                    <span class="error-message" id="lastNameError"></span>
+                    <span class="form-error-message" id="lastNameError"></span>
                   </div>
-                  <div class="form-row">
+                  <div class="input-row">
                     <label for="emailInput">
-                      <span class="label-text">Email</span>
+                      <span class="input-label">Email</span>
                     </label>
                     <input
                       id="emailInput"
-                      class="input-field"
+                      class="form-input"
                       type="email"
                       name="email"
                       pattern="^[^@\s]+@[^@\s]+\.[^@\s]{2,}$"
                       placeholder="example@example.com"
                       required
                     />
-                    <span class="error-message" id="emailError"></span>
+                    <span class="form-error-message" id="emailError"></span>
                   </div>
-                  <div class="form-row">
+                  <div class="input-row">
                     <label for="phoneInput">
-                      <span class="label-text">Phone Number</span>
+                      <span class="input-label">Phone Number</span>
                     </label>
                     <input
                       id="phoneInput"
-                      class="input-field"
+                      class="form-input"
                       name="phone_number"
                       type="tel"
-                      pattern="\+45 \d{8}"
                       placeholder="+45 12345678"
-                      required
                     />
-                    <span class="error-message" id="phoneError"></span>
                   </div>
-                  <div class="form-row">
+                  <div class="input-row">
                     <label for="passwordInput">
-                      <span class="label-text">Password</span>
+                      <span class="input-label">Password</span>
                     </label>
                     <input
                       id="passwordInput"
-                      class="input-field"
+                      class="form-input"
                       name="password"
                       type="password"
                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
                       required
                     />
-                    <div class="password-error" id="passwordError">
-                      <p class="password-message">Your password needs to:</p>
+                    <div class="password-rules" id="passwordError">
+                      <p class="password-rules-message">
+                        Your password needs to:
+                      </p>
                       <ul class="fa-ul">
                         <li>
                           <span class="fa-li"
@@ -193,32 +195,39 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="form-row">
+                  <div class="input-row">
                     <label for="confirmPasswordInput">
-                      <span class="label-text">Confirm Password</span>
+                      <span class="input-label">Confirm Password</span>
                     </label>
                     <input
                       id="confirmPasswordInput"
-                      class="input-field"
+                      class="form-input"
                       name="confirm_password"
                       type="password"
                       required
                     />
                     <span
-                      class="error-message"
+                      class="form-error-message"
                       id="confirmPasswordError"
                     ></span>
                   </div>
                 </fieldset>
               </section>
-              <button id="submit" type="submit" value="Submit">
-                Create account
+              <button
+                id="submit"
+                class="button submit-button"
+                type="submit"
+                value="Submit"
+              >
+                <p class="button__body">Create account</p>
               </button>
+              <p class="btn-sub-text">
+                Already have an account? <span>Log in</span>
+              </p>
             </form>
-            <p class="btn-text">Already have an account? <span>Log in</span></p>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>

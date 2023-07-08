@@ -8,6 +8,22 @@
   font-stretch: 75% 125%;
 }
 
+/* VARIABLES DECLARATION */
+:root {
+  --primaryColor: rgb(46, 98, 158);
+  --primaryColorLight: rgb(66, 133, 209);
+
+  --secondaryColor: rgb(58, 58, 58);
+  --secondaryColorLight: rgb(88, 88, 88);
+
+  --backgroundColor: rgb(249, 250, 251);
+  --white: #ffffff;
+  --error: rgb(228, 0, 0);
+  --shadowLight: rgba(0, 0, 0, 0.1);
+  --shadowMedium: rgba(0, 0, 0, 0.2);
+  --shadowDark: rgba(0, 0, 0, 0.3);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,25 +40,33 @@ main {
   display: flex;
 }
 
-/* LEFT SIDE */
-.left-side {
+.italic {
+  font-style: italic;
+}
+
+.show {
+  visibility: visible !important;
+}
+
+/* HERO-SECTION */
+.hero-section {
   width: 35vw;
   min-width: 400px;
   position: relative;
 }
 
-.background-container {
+.hero-image-container {
   height: 100vh;
   overflow: hidden;
 }
 
-.background-img {
+.hero-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.logo-container {
+.hero-logo-container {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -54,12 +78,12 @@ main {
   width: 100%;
 }
 
-.logo-container .logo {
+.hero-logo {
   width: 300px;
   margin: 50px 0;
 }
 
-.background-author {
+.hero-author-container {
   position: absolute;
   top: 98%;
   left: 50%;
@@ -67,33 +91,34 @@ main {
   width: max-content;
 }
 
-.background-author .author,
-.background-author a {
-  color: #fff;
+.hero-author,
+.hero-author a {
+  color: var(--white);
 }
 
-/* RIGHT SIDE */
-.header,
-.right-side section h2,
-.right-side fieldset,
-.right-side form button,
-.right-side .btn-text {
+/* FORM-SECTION */
+
+.form-header,
+.form-title,
+.form-fieldset,
+.button,
+.btn-sub-text {
   margin-left: 50px;
 }
 
-.right-side {
-  background-color: #f9fafb;
+.form-section {
+  background-color: var(--backgroundColor);
   width: 65vw;
 }
 
-.right-content {
+.form-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
 }
 
-.header {
+.form-header {
   display: flex;
   flex-direction: column;
   width: 40vw;
@@ -101,27 +126,34 @@ main {
   gap: 40px;
   margin-bottom: 40px;
   letter-spacing: 1px;
+  color: var(--secondaryColor);
 }
+
+.header-accent {
+  color: var(--primaryColorLight);
+  transition: 0.15s color ease;
+  cursor: pointer;
+}
+.header-accent:hover {
+  color: var(--primaryColor);
+}
+
 .form-title {
-  color: rgb(58, 58, 58);
+  color: var(--secondaryColor);
   letter-spacing: 0.8px;
   margin-top: 20px;
 }
 
-.icon {
-  width: 32px;
-}
-
-form section {
-  background-color: #ffffff;
+.main-form-section {
+  background-color: var(--white);
   border-top: 1px solid rgba(185, 185, 185, 0.15);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 5px var(--shadow);
   padding-bottom: 30px;
   margin-bottom: 40px;
   width: 100%;
 }
 
-fieldset {
+.form-fieldset {
   max-width: 37vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -133,7 +165,7 @@ fieldset {
   padding-bottom: 30px;
 }
 
-form .form-row {
+.input-row {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -144,15 +176,33 @@ form .form-row {
   max-width: 310px;
 }
 
-form label {
-  color: rgb(88, 88, 88);
+.input-label {
+  color: var(--secondaryColorLight);
   text-transform: uppercase;
   margin-bottom: 5px;
   width: max-content;
 }
 
-.error-message {
-  color: #e40000;
+.form-input {
+  height: 30px;
+  border: 1px solid rgba(185, 185, 185, 0.6);
+  border-radius: 5px;
+  padding: 4px;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border: 1px solid var(--primaryColor);
+  outline: none;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.invalid-input {
+  border: 1px solid var(--error) !important;
+}
+
+.form-error-message {
+  color: var(--error);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0;
@@ -165,7 +215,7 @@ form label {
   pointer-events: none;
 }
 
-.password-error {
+.password-rules {
   position: absolute;
   visibility: hidden;
   min-width: 25em;
@@ -173,7 +223,7 @@ form label {
 
   top: 58px;
 
-  background-color: #fff;
+  background-color: var(--white);
   padding: 1.125em 1.5em;
   font-size: 1.25em;
   font-weight: 400;
@@ -185,7 +235,7 @@ form label {
   /* transition: all 0.3s; */
 }
 
-.password-error::before {
+.password-rules::before {
   content: "";
   position: absolute;
   width: 0;
@@ -195,77 +245,69 @@ form label {
   border: 0.75rem solid transparent;
   border-top: none;
 
-  border-bottom-color: #fff;
-  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+  border-bottom-color: var(--white);
+  filter: drop-shadow(0 -0.0625rem 0.0625rem var(--shadow));
 }
 
-.password-error .password-message {
+.password-rules-message {
   margin-bottom: 10px;
-  color: #e40000;
+  color: var(--error);
 }
-.password-error ul li {
+.password-rules ul li {
   margin-bottom: 5px;
 }
 
-.password-error ul li .rule-icon {
-  color: #e40000;
+.password-rules ul li .rule-icon {
+  color: var(--error);
 }
 
-/* #passwordError {
-  bottom: -35px;
-} */
-
-.show {
-  visibility: visible;
-}
-
-.input-field {
-  height: 30px;
-  border: 1px solid rgba(185, 185, 185, 0.6);
-  border-radius: 5px;
-  padding: 4px;
-  transition: all 0.2s ease;
-}
-
-.input-field:focus {
-  border: 1px solid rgba(46, 98, 158, 0.9);
-  outline: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.invalid-input {
-  border: 1px solid #e40000 !important;
-}
-
-form button {
-  font-family: "Mona Sans", sans-serif;
-  margin-bottom: 15px;
-  border: none;
-  background-color: rgba(46, 98, 158, 1);
-  color: #fff;
-  padding: 10px;
+.button {
   width: 200px;
+  color: var(--white);
+  background-color: var(--primaryColorLight);
+  font-family: "Mona Sans", sans-serif;
+
+  padding: 10px;
+  margin-bottom: 15px;
   border-radius: 6px;
+  border: none;
+
+  cursor: pointer;
+  box-shadow: 0 4px 4px var(--shadowMedium);
+}
+
+.submit-button {
   font-size: 17px;
   font-weight: 500;
-  cursor: pointer;
+
+  transform: translateY(-1px);
+  transition: 0.15s transform ease, 0.15s box-shadow ease,
+    0.15s background-color ease;
 }
 
-.italic {
-  font-style: italic;
+.submit-button:hover {
+  transform: translateY(0);
+  box-shadow: 0 2px 2px var(--shadowMedium);
+
+  background-color: var(--primaryColor);
 }
 
-.btn-text {
+.btn-sub-text {
   font-weight: 500;
 }
 
-.btn-text span {
-  color: rgba(46, 98, 158, 1);
+.btn-sub-text span {
+  color: var(--primaryColorLight);
   font-weight: 700;
   cursor: pointer;
-}
-/* SPLASH */
 
+  transition: 0.15s color ease;
+}
+.btn-sub-text span:hover {
+  color: var(--primaryColor);
+}
+
+/* SPLASH */
 .letter {
   font-size: 42px;
   color: #0000ff;

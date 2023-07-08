@@ -1,14 +1,14 @@
 const firstNameInput = document.getElementById("firstNameInput");
 const lastNameInput = document.getElementById("lastNameInput");
 const emailInput = document.getElementById("emailInput");
-const phoneInput = document.getElementById("phoneInput");
+// const phoneInput = document.getElementById("phoneInput");
 const passwordInput = document.getElementById("passwordInput");
 const confirmPasswordInput = document.getElementById("confirmPasswordInput");
 
 const firstNameError = document.getElementById("firstNameError");
 const lastNameError = document.getElementById("lastNameError");
 const emailError = document.getElementById("emailError");
-const phoneError = document.getElementById("phoneError");
+// const phoneError = document.getElementById("phoneError");
 const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
 
@@ -67,14 +67,14 @@ lastNameInput.addEventListener("blur", function () {
 
 emailInput.addEventListener("blur", function () {
   if (emailInput.value.length > 0 && emailInput.validity.patternMismatch) {
-    emailError.textContent = "* Please enter your email";
+    emailError.textContent = "* Please enter valid email";
     emailError.classList.add("show");
     emailInput.classList.add("invalid-input");
   }
 
   emailInput.addEventListener("input", function () {
     if (emailInput.validity.patternMismatch) {
-      emailError.textContent = "* Please enter your email";
+      emailError.textContent = "* Please enter valid email";
       emailError.classList.add("show");
       emailInput.classList.add("invalid-input");
     } else {
@@ -85,25 +85,25 @@ emailInput.addEventListener("blur", function () {
   });
 });
 
-phoneInput.addEventListener("blur", function () {
-  if (phoneInput.value.length > 0 && phoneInput.validity.patternMismatch) {
-    phoneError.textContent = "* Please enter your phone number";
-    phoneError.classList.add("show");
-    phoneInput.classList.add("invalid-input");
-  }
+// phoneInput.addEventListener("blur", function () {
+//   if (phoneInput.value.length > 0 && phoneInput.validity.patternMismatch) {
+//     phoneError.textContent = "* Please enter your phone number";
+//     phoneError.classList.add("show");
+//     phoneInput.classList.add("invalid-input");
+//   }
 
-  phoneInput.addEventListener("input", function () {
-    if (phoneInput.validity.patternMismatch) {
-      phoneError.textContent = "* Please enter your phone number";
-      phoneError.classList.add("show");
-      phoneInput.classList.add("invalid-input");
-    } else {
-      phoneError.textContent = "";
-      phoneError.classList.remove("show");
-      phoneInput.classList.remove("invalid-input");
-    }
-  });
-});
+//   phoneInput.addEventListener("input", function () {
+//     if (phoneInput.validity.patternMismatch) {
+//       phoneError.textContent = "* Please enter your phone number";
+//       phoneError.classList.add("show");
+//       phoneInput.classList.add("invalid-input");
+//     } else {
+//       phoneError.textContent = "";
+//       phoneError.classList.remove("show");
+//       phoneInput.classList.remove("invalid-input");
+//     }
+//   });
+// });
 
 passwordInput.addEventListener("focus", function () {
   passwordError.classList.add("show");
