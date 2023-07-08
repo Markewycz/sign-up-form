@@ -305,7 +305,7 @@ main {
   color: var(--primaryColorLight);
   font-weight: 700;
   cursor: pointer;
-
+  
   transition: 0.15s color ease;
 }
 .btn-sub-text span:hover {
@@ -410,12 +410,16 @@ main {
 
   .form-section {
     width: auto;
+    margin-bottom: 20px;
   }
   .form-content {
-    margin-top: 30px;
+    height: initial;
+    margin-top: 10px;
     align-items: center;
     padding: 20px;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
   .form-header {
     width: auto;
@@ -434,7 +438,6 @@ main {
 
   .main-form-section {
     border-radius: 10px;
-    margin-bottom: 20px;
     box-shadow: 0 5px 10px var(--shadowMedium);
   }
 
@@ -444,6 +447,7 @@ main {
     place-items: center;
     width: 90vw;
     max-width: initial;
+    padding-bottom: 0;
   }
 
   .input-row {
