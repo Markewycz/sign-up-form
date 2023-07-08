@@ -221,24 +221,24 @@ confirmPasswordInput.addEventListener("blur", function () {
   });
 });
 
-const form = document.getElementById("signUpForm");
+// const form = document.getElementById("signUpForm");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  // Check for validity of form
-  if (form.checkValidity() === false) {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log("No valid");
-  } else {
-    console.log("Form is valid");
-    console.log(e.target);
-    console.log(e.target.first_name.value);
-    console.log(e.target.last_name.value);
-    console.log(e.target.email.value);
-    console.log(e.target.phone_number.value);
-    console.log(e.target.password.value);
-    console.log(e.target.confirm_password.value);
-  }
-});
+//   // Check for validity of form
+//   if (form.checkValidity() === false) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     console.log("No valid");
+//   } else {
+//     console.log("Form is valid");
+//     console.log(e.target);
+//     console.log(e.target.first_name.value);
+//     console.log(e.target.last_name.value);
+//     console.log(e.target.email.value);
+//     console.log(e.target.phone_number.value);
+//     console.log(e.target.password.value);
+//     console.log(e.target.confirm_password.value);
+//   }
+// });
