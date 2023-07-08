@@ -28,7 +28,8 @@ The form is a sign-up form for a photography company called Splash. It allows us
 
 ### Screenshots
 
-![sign-up-form](https://github.com/Markewycz/sign-up-form/assets/118677334/b7c04f12-59ca-43e0-9790-28679c0590f1)
+![signup-form](https://github.com/Markewycz/sign-up-form/assets/118677334/49ca1c06-4a33-401f-b49e-dc672db2dc24)
+
 
 
 ### License
