@@ -33,6 +33,7 @@ The form is a sign-up form for a photography company called Splash. It allows us
 - Used CSS3 Variables for styling
 - Used Git and Github for project management
 - Applied Eager type of validation(Lazy+Aggresive)
+- Used MediaQueries for responsive layout
 
 ### Setup/Installation Requirements
 
