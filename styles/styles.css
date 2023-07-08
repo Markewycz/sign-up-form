@@ -1,5 +1,13 @@
 /* font-family: 'Bebas Neue', sans-serif; */
 
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +16,8 @@
 
 body {
   height: 100vh;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Mona Sans", sans-serif;
 }
 
 main {
@@ -88,6 +97,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 40vw;
+  min-width: 410px;
   gap: 40px;
   margin-bottom: 40px;
   letter-spacing: 1px;
@@ -120,36 +130,115 @@ fieldset {
   grid-row-gap: 30px;
   margin-top: 20px;
   border: none;
+  padding-bottom: 30px;
 }
 
-form p {
+form .form-row {
+  position: relative;
   display: flex;
   flex-direction: column;
-  text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.1em;
-  min-width: 250px;
+  min-width: 240px;
+  max-width: 310px;
 }
-form p input {
+
+form label {
+  color: rgb(88, 88, 88);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  width: max-content;
+}
+
+.error-message {
+  color: #e40000;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  transition: all 0.2s ease;
+  visibility: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.password-error {
+  position: absolute;
+  visibility: hidden;
+  min-width: 25em;
+  z-index: 2;
+
+  top: 58px;
+
+  background-color: #fff;
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3),
+    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+
+  /* transition: all 0.3s; */
+}
+
+.password-error::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 1.5em;
+  border: 0.75rem solid transparent;
+  border-top: none;
+
+  border-bottom-color: #fff;
+  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+}
+
+.password-error .password-message {
+  margin-bottom: 10px;
+  color: #e40000;
+}
+.password-error ul li {
+  margin-bottom: 5px;
+}
+
+.password-error ul li .rule-icon {
+  color: #e40000;
+}
+
+/* #passwordError {
+  bottom: -35px;
+} */
+
+.show {
+  visibility: visible;
+}
+
+.input-field {
   height: 30px;
   border: 1px solid rgba(185, 185, 185, 0.6);
   border-radius: 5px;
   padding: 4px;
+  transition: all 0.2s ease;
 }
 
-form p input:focus {
+.input-field:focus {
   border: 1px solid rgba(46, 98, 158, 0.9);
   outline: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.label-text {
-  color: rgb(88, 88, 88);
+.invalid-input {
+  border: 1px solid #e40000 !important;
 }
 
 form button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Mona Sans", sans-serif;
   margin-bottom: 15px;
   border: none;
   background-color: rgba(46, 98, 158, 1);
@@ -178,9 +267,10 @@ form button {
 /* SPLASH */
 
 .letter {
-  font-size: 32px;
+  font-size: 42px;
   color: #0000ff;
   font-style: italic;
+  font-weight: 900;
   /* margin-right: 5px; */
 }
 
@@ -207,3 +297,10 @@ form button {
 .letter:nth-child(6) {
   color: #00ccff; /* Another shade of blue for the sixth letter */
 }
+/* 
+@media (max-width: 1030px) {
+  fieldset {
+    grid-template-columns: 1fr;
+    grid-row-gap: 15px;
+  }
+} */

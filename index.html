@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="src/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/4616b97752.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/script.js" defer></script>
   </head>
   <body>
     <main>
@@ -60,50 +64,155 @@
               creative <span class="italic"> potential</span>.
             </h3>
           </div>
+
           <div class="sign-up-container">
-            <form>
+            <form id="signUpForm" novalidate>
               <section>
                 <h2 class="form-title">Let's get started!</h2>
                 <fieldset>
-                  <p>
-                    <label for="first-name">
+                  <div class="form-row">
+                    <label for="firstNameInput">
                       <span class="label-text">First Name</span>
                     </label>
-                    <input id="first-name" type="text" />
-                  </p>
-                  <p>
-                    <label for="last-name">
+                    <input
+                      id="firstNameInput"
+                      class="input-field"
+                      name="first_name"
+                      type="text"
+                      pattern="[A-Za-z]+"
+                      required
+                    />
+                    <span class="error-message" id="firstNameError"></span>
+                  </div>
+                  <div class="form-row">
+                    <label for="lastNameInput">
                       <span class="label-text">Last Name</span>
                     </label>
-                    <input id="last-name" type="text" />
-                  </p>
-                  <p>
-                    <label for="email">
+                    <input
+                      id="lastNameInput"
+                      class="input-field"
+                      name="last_name"
+                      type="text"
+                      pattern="[A-Za-z]+"
+                      required
+                    />
+                    <span class="error-message" id="lastNameError"></span>
+                  </div>
+                  <div class="form-row">
+                    <label for="emailInput">
                       <span class="label-text">Email</span>
                     </label>
-                    <input id="email" type="email" required />
-                  </p>
-                  <p>
-                    <label for="phone-number">
+                    <input
+                      id="emailInput"
+                      class="input-field"
+                      type="email"
+                      name="email"
+                      pattern="^[^@\s]+@[^@\s]+\.[^@\s]{2,}$"
+                      placeholder="example@example.com"
+                      required
+                    />
+                    <span class="error-message" id="emailError"></span>
+                  </div>
+                  <div class="form-row">
+                    <label for="phoneInput">
                       <span class="label-text">Phone Number</span>
                     </label>
-                    <input id="phone-number" type="text" />
-                  </p>
-                  <p>
-                    <label for="password">
+                    <input
+                      id="phoneInput"
+                      class="input-field"
+                      name="phone_number"
+                      type="tel"
+                      pattern="\+45 \d{8}"
+                      placeholder="+45 12345678"
+                      required
+                    />
+                    <span class="error-message" id="phoneError"></span>
+                  </div>
+                  <div class="form-row">
+                    <label for="passwordInput">
                       <span class="label-text">Password</span>
                     </label>
-                    <input id="password" type="text" />
-                  </p>
-                  <p>
-                    <label for="confirm-password">
+                    <input
+                      id="passwordInput"
+                      class="input-field"
+                      name="password"
+                      type="password"
+                      pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                      required
+                    />
+                    <div class="password-error" id="passwordError">
+                      <p class="password-message">Your password needs to:</p>
+                      <ul class="fa-ul">
+                        <li>
+                          <span class="fa-li"
+                            ><i
+                              class="fa-solid fa-xmark rule-icon"
+                              data-rule="length"
+                            ></i
+                          ></span>
+                          <p id="firstRule">
+                            Be at least <strong>8 characters</strong> long.
+                          </p>
+                        </li>
+                        <li>
+                          <span class="fa-li"
+                            ><i
+                              class="fa-solid fa-xmark rule-icon"
+                              data-rule="one-number"
+                            ></i
+                          ></span>
+                          <p id="secondRule">
+                            Contain at least <strong>one</strong> number.
+                          </p>
+                        </li>
+                        <li>
+                          <span class="fa-li"
+                            ><i
+                              class="fa-solid fa-xmark rule-icon"
+                              data-rule="special-character"
+                            ></i
+                          ></span>
+                          <p id="thirdRule">
+                            Contain at least <strong>one</strong> special
+                            character.
+                          </p>
+                        </li>
+                        <li>
+                          <span class="fa-li"
+                            ><i
+                              class="fa-solid fa-xmark rule-icon"
+                              data-rule="uppercase-letter"
+                            ></i
+                          ></span>
+                          <p id="fourthRule">
+                            Contain at least <strong>one</strong> uppercase
+                            letter.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <label for="confirmPasswordInput">
                       <span class="label-text">Confirm Password</span>
                     </label>
-                    <input id="confirm-password" type="text" />
-                  </p>
+                    <input
+                      id="confirmPasswordInput"
+                      class="input-field"
+                      name="confirm_password"
+                      type="password"
+                      required
+                    />
+                    <span
+                      class="error-message"
+                      id="confirmPasswordError"
+                    ></span>
+                  </div>
                 </fieldset>
               </section>
-              <button type="submit">Create account</button>
+              <button id="submit" type="submit" value="Submit">
+                Create account
+              </button>
             </form>
             <p class="btn-text">Already have an account? <span>Log in</span></p>
           </div>
