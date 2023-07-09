@@ -163,6 +163,8 @@ main {
   color: var(--secondaryColor);
   letter-spacing: 0.8px;
   margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
 }
 
 .main-form-section {
@@ -191,7 +193,7 @@ main {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   min-width: 240px;
   max-width: 310px;
@@ -208,7 +210,8 @@ main {
   height: 30px;
   border: 1px solid rgba(185, 185, 185, 0.6);
   border-radius: 5px;
-  padding: 4px;
+  padding: 6px;
+  font-size: 16px;
   transition: all 0.2s ease;
 }
 
@@ -246,7 +249,7 @@ main {
 
   background-color: var(--white);
   padding: 1.125em 1.5em;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 400;
   letter-spacing: 0;
   border-radius: 1rem;

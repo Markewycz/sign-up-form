@@ -242,3 +242,10 @@ confirmPasswordInput.addEventListener("blur", function () {
 //     console.log(e.target.confirm_password.value);
 //   }
 // });
+
+if(navigator.userAgent.indexOf('iPhone') > -1 )
+{
+    document
+      .querySelector("[name=viewport]")
+      .setAttribute("content","width=device-width, initial-scale=1, maximum-scale=1");
+}
