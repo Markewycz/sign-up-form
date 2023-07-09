@@ -390,7 +390,7 @@ main {
   main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100svh 1fr;
+    grid-template-rows: repeat(2, auto);
   }
 
   body {
