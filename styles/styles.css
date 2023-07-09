@@ -368,6 +368,25 @@ main {
   color: #00ccff; /* Another shade of blue for the sixth letter */
 }
 
+@-webkit-keyframes text-shadow-drop-center {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    text-shadow: 0px 0px 20px rgba(59, 59, 59, 0.86),
+      0px 0px 20px rgba(85, 85, 85, 0.86);
+  }
+}
+@keyframes text-shadow-drop-center {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    text-shadow: 0px 0px 20px rgba(59, 59, 59, 0.86),
+      0px 0px 20px rgba(85, 85, 85, 0.86);
+  }
+}
+
 @media (max-width: 650px) {
   main {
     display: grid;
@@ -376,7 +395,8 @@ main {
   }
 
   body {
-    overflow: scroll;
+    overflow-y: visible;
+    overflow-x: hidden;
   }
 
   .hero-image-horizontal {
@@ -387,13 +407,24 @@ main {
     max-width: 100%;
     height: 100vh;
     border-right: 0;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(
+        to right,
+        #003399,
+        #336699,
+        #6699cc,
+        #99ccff,
+        #6699cc,
+        #336699,
+        #003399
+      )
+      1;
   }
 
   .hero-section {
     width: 100vw;
     /* min-height: 100vh; */
     min-width: 0;
-    flex: 1;
   }
   .hero-container {
     height: 100vh;
@@ -410,11 +441,13 @@ main {
     left: initial;
     z-index: 1;
     flex-direction: column;
+    width: auto;
   }
 
   .hero-logo {
     filter: drop-shadow(0 5px 30px rgb(0, 0, 0));
     margin: 0;
+    /* max-width: 200px; */
   }
   .hero-logo-text {
     display: block;
@@ -422,8 +455,10 @@ main {
     letter-spacing: 1px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.6);
-    text-shadow: 0px 0px 20px rgba(59, 59, 59, 0.86),
-      0px 0px 20px rgba(85, 85, 85, 0.86);
+    -webkit-animation: text-shadow-drop-center 1s steps(160, start) infinite
+      alternate both;
+    animation: text-shadow-drop-center 1s steps(160, start) infinite alternate
+      both;
     z-index: 3;
   }
 
@@ -444,7 +479,7 @@ main {
     height: initial;
     margin-top: 10px;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
