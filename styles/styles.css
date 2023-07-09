@@ -54,6 +54,9 @@ main {
   display: none;
 }
 
+.emoji {
+  font-size: 35px;
+}
 /* HERO-SECTION */
 .hero-section {
   width: 35vw;
@@ -97,7 +100,7 @@ main {
 }
 
 .hero-logo {
-  width: 300px;
+  max-width: 300px;
   margin: 50px 0;
 }
 .hero-logo-text {
@@ -496,6 +499,7 @@ main {
     padding: 0;
     margin-top: 10px;
     visibility: visible;
+    min-width: 0;
   }
 
   .password-rules-message {
