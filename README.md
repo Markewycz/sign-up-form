@@ -27,7 +27,7 @@ The form is a sign-up form for a photography company called Splash. It allows us
 - The overall form validity is checked, and if valid, the form data is logged to the console.
 
 ### Outcome
-
+- Used JavaScript to handle all validation in real time
 - Tried to maintain clean code
 - Used CSS3 grid and flex for layout
 - Used CSS3 Variables for styling
