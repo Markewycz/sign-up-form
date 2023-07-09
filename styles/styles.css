@@ -40,7 +40,6 @@ body {
 
 main {
   display: flex;
-  height: 100vh;
 }
 
 .italic {
@@ -397,6 +396,7 @@ main {
   body {
     overflow-y: visible;
     overflow-x: hidden;
+    height: 100svh;
   }
 
   .hero-image-horizontal {
