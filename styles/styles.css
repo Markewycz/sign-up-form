@@ -391,12 +391,13 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    height: 100svh;
   }
 
   body {
     overflow-y: visible;
     overflow-x: hidden;
-    height: 100svh;
+    height: auto;
   }
 
   .hero-image-horizontal {
@@ -423,11 +424,9 @@ main {
 
   .hero-section {
     width: 100vw;
-    /* min-height: 100vh; */
     min-width: 0;
   }
   .hero-container {
-    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
