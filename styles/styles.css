@@ -430,7 +430,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100lvh;
+    height: 100svh;
   }
 
   .hero-logo-container {
