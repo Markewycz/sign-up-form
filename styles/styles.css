@@ -50,10 +50,14 @@ main {
   visibility: visible !important;
 }
 
+.hero-image-horizontal {
+  display: none;
+}
+
 /* HERO-SECTION */
 .hero-section {
   width: 35vw;
-  min-width: 400px;
+  min-width: 320px;
   position: relative;
 }
 
@@ -62,16 +66,28 @@ main {
   /* overflow: hidden; */
 }
 
-.hero-image {
+.hero-image-vertical {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-right: 4px solid;
+  border-image: linear-gradient(
+      to top,
+      #003399,
+      #336699,
+      #6699cc,
+      #99ccff,
+      #6699cc,
+      #336699,
+      #003399
+    )
+    1;
 }
 
 .hero-logo-container {
   position: absolute;
   top: 30%;
-  left: 50%;
+  left: calc(50% - 4px);
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
@@ -151,8 +167,8 @@ main {
 
 .main-form-section {
   background-color: var(--white);
-  border-top: 1px solid rgba(185, 185, 185, 0.15);
-  box-shadow: 0 5px 5px var(--shadow);
+  border-top: 1px solid rgba(185, 185, 185, 0.4);
+  box-shadow: 0 5px 5px var(--shadowLight);
   padding-bottom: 30px;
   margin-bottom: 40px;
   width: 100%;
@@ -305,7 +321,7 @@ main {
   color: var(--primaryColorLight);
   font-weight: 700;
   cursor: pointer;
-  
+
   transition: 0.15s color ease;
 }
 .btn-sub-text span:hover {
@@ -345,7 +361,7 @@ main {
   color: #00ccff; /* Another shade of blue for the sixth letter */
 }
 
-@media (max-width: 540px) {
+@media (max-width: 650px) {
   main {
     display: grid;
     grid-template-columns: 1fr;
@@ -354,6 +370,16 @@ main {
 
   body {
     overflow: scroll;
+  }
+
+  .hero-image-horizontal {
+    display: none;
+  }
+  .hero-image-vertical {
+    display: block;
+    max-width: 100%;
+    height: 100vh;
+    border-right: 0;
   }
 
   .hero-section {
@@ -377,11 +403,6 @@ main {
     left: initial;
     z-index: 1;
     flex-direction: column;
-  }
-
-  .hero-image {
-    max-width: 100%;
-    height: 100vh;
   }
 
   .hero-logo {
@@ -485,5 +506,97 @@ main {
   a {
     text-decoration: none;
     color: var(--secondaryColor);
+  }
+}
+
+@media (min-width: 650px) and (max-width: 990px) {
+  body {
+    overflow: scroll;
+  }
+
+  .hero-image-vertical {
+    display: none;
+  }
+
+  .hero-image-horizontal {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .hero-section {
+    width: 100vw;
+    height: auto;
+  }
+
+  .hero-container {
+    height: initial;
+    position: relative;
+  }
+
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/backgroundHorizontal.jpg");
+    background-size: cover;
+    opacity: 0.5; /* Adjust the opacity level as desired */
+  }
+
+  .hero-logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: translate(0, 0);
+    border-bottom: 4px solid;
+    border-right: 0;
+    border-image: linear-gradient(
+        to right,
+        #003399,
+        #336699,
+        #6699cc,
+        #99ccff,
+        #6699cc,
+        #336699,
+        #003399
+      )
+      1;
+  }
+
+  .form-section {
+    width: 100vw;
+  }
+  .form-content {
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .form-header {
+    width: 70vw;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+  }
+
+  .main-form-section {
+    box-shadow: 0 5px 5px var(--shadowMedium);
   }
 }
